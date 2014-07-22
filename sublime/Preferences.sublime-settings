@@ -1,0 +1,36 @@
+{
+	"auto_complete": true,
+	"color_scheme": "Packages/User/Flatland Dark (SL).tmTheme",
+	"draw_white_space": "all",
+	"ensure_newline_at_eof_on_save": true,
+	"flatland_square_tabs": true,
+	"fold_buttons": true,
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		"__pycache__",
+		".gitignore"
+	],
+	"font_face": "Monaco",
+	"font_size": 12,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+	],
+	"rulers":
+	[
+		79
+	],
+	"show_full_path": true,
+	"show_minimap": false,
+	"soda_classic_tabs": true,
+	"soda_folder_icons": true,
+	"tab_size": 4,
+	"theme": "Flatland Dark.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
+	"vintage_start_in_command_mode": true,
+	"word_wrap": true,
+	"wrap_width": 80
+}

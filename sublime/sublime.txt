@@ -1,0 +1,95 @@
+install sublime
+
+install package manager
+	# This allows you to quickly install plugins
+Run this command to install Package Control. This is the only thing you need
+to run this way, every other plugin can be installed through Package Control
+
+Open the console with ctrl+\`
+Paste the below command into the console and hit enter.
+`import urllib.request,os; pf = 'Package Control.sublime-package'; ipp =
+sublime.installed_packages_path(); urllib.request.install_opener(
+urllib.request.build_opener( urllib.request.ProxyHandler()) );
+open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen(
+'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())`
+
+== Plugins ==
+To install plugins, open command pallet (cmd + shift + P) and use package
+manager.  Then type the package name you are looking for. 
+
+ 1. vintageous # vim emulator. Allows the use of vim commands in sublime
+ 1. Nice Blue Soda // color scheme that sets colors of text and background 
+ 1. All Autocomplete
+ 1. SublimeLinter
+ 1. SideBarEnhancements
+ 1. Git
+ 1. SublimeREPL
+
+To uninstall, open command pallet then type remove package, then select the
+package you wish to uninstall.
+
+== Preferences ==
+Enter these settings on the Preferences -> Settings - User page. 
+# Preferences.sublime-settings located here:
+# /Users/{user}/Library/Application Support/Sublime\ Text\ 3/Packages/User
+
+	"auto_complete": false,
+	"color_scheme": "Packages/User/Nice Blue Soda (SL).tmTheme",
+	"draw_white_space": "all",
+	"fold_buttons": false,
+	"highlight_line": true,
+	"ignored_packages": [],
+	"rulers": [	72,	79 ],
+	"show_full_path": true,
+	"show_minimap": false,
+	"tab_size": 4,
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
+	"vintage_start_in_command_mode": true,
+	"word_wrap": true,
+	"wrap_width": 80
+
+These set the color scheme, tabs, word wrap and line length. This also sets
+vintage/vintageos to start in normal mode by default, and allow the use of vim
+commands.
+
+= Command Pallet =
+You can run command line like commands here, it has git integration (need to
+install the plugin 'git'), set syntax, etc. 
+
+= Snippets =
+To create a snippet, click on tools -> new snippet.
+ 1. Add your content in [CDATA][] which is wrapped in <content>
+ 1. You can add a 'tab trigger', which will allow you to call the snipped
+using a specified word.
+ 1. <scope> allows you to specify which language this snipped can be used by. 
+
+= SublimeREPL =
+SublimeREPL is a python (or any other language) interpreter that is built into
+sublime text. 
+
+To install, use package control, then restart sublime text.
+You can modify settings in Preferences -> Package settings -> SublimeREPL ->
+Settings - User
+
+Add: 
+	`{
+    "python_virtualenv_paths": [
+        "~/.virtualenvs", // virtualenvwrapper
+        ]
+	}
+	`
+Which will allow you to use a virtual env for your interpreter. 
+
+To use a virtualenv
+ 1. Open Command Pallet
+ 1. type sub py vir
+ 1. enter
+
+You can split the windows so you either have two columns side by side, or have
+two rows one on top of the other
+ 1. opt + shift + cmd + 2 - creates rows
+ 1. crtl + shift + cmd + 2 - creates columns
+
+You can move between columns/rows by pressing ctrl + (num)
+	num = group window number (usually one or two. top = 1, bottom = 2)
