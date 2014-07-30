@@ -1,0 +1,9 @@
+Follow the steps from here:
+	https://wiki.archlinux.org/index.php/Beginners%27_guide
+
+Once complete, follow General Recommendations for GUI setup:
+	https://wiki.archlinux.org/index.php/General_recommendations#Graphical_user_interface
+	https://wiki.archlinux.org/index.php/Xorg
+
+If on VM, install the Guest Additions
+	https://wiki.archlinux.org/index.php/VirtualBox#Installation_steps_for_Arch_Linux_guests
