@@ -1,9 +1,135 @@
 Follow the steps from here:
 	https://wiki.archlinux.org/index.php/Beginners%27_guide
 
-Once complete, follow General Recommendations for GUI setup:
+# loadkeys us
+# ${editor} /etc/locale.gen
+	# uncomment the language you want, eg: en_US.UTF-8 UTF-8
+# locale-gen
+# export LANG=en_US.UTF-8
+
+### Check internet connection ##
+# ping -c 3 www.google.com
+# if you get ping: unknown host follow the steps in the link below:
+		https://wiki.archlinux.org/index.php/Beginners%27_guide#Establish_an_internet_connection
+
+### Preparing Storage Drive ###
+# sgdisk --zap-all /dev/sda
+# cgdisk /dev/sda
+# Choose 'new'
+
+## Root ##
+# Enter - for first sector
+# type in 15G (or size you find appropriate. For root, at least 15G)
+# Enter - default hex code
+# Enter - Blank partition name
+## Home ##
+# Select larger free space area (arrow keys)
+# Choose 'new'
+# Enter - for first sector
+# Enter to use rest of drive
+# Enter - default hex code
+# Enter - Blank partition name
+# Make sure everything looks good in home and root
+# Choose 'Write'
+# Type 'yes'
+# Choose 'Quit' or press 'q'
+
+### Create Filesystems ###
+# mkfs.ext4 /dev/sda1
+# mkfs.ext4 /dev/sda2
+
+### Mount Partitions ###
+# lsblk -f - show current disk layout. Without -f will show human readable size of disks
+# mount /dev/sda1 /mnt
+# mkdir /mnt/home
+# mount /dev/sda2 /mnt/home
+
+### Select Mirror ###
+## Edit mirror list ##
+# ${editor} /etc/pacman.d/mirrorlist
+# delete unwanted mirrors (I kept all US mirrors)
+
+### Install Base System ###
+# pacstrap -i /mnt base base-devel
+
+### Generate fstab ###
+# genfstab -U -p /mnt >> /mnt/etc/fstab
+# ${editor} /mnt/etc/fstab
+	# check to make sure this worked
+
+### Chroot and config base sytem ###
+# arch-chroot /mnt /bin/bash (leave out /bin/bash for sh)
+# Choose locale again
+# ${editor} /etc/locale.gen
+# locale-gen
+# echo LANG=en_US.UTF-8
+# export LANG=en_US.UTF-8
+
+### Timezone ###
+# Check for timezone
+# ls /usr/share/zoneinfo
+# Create symlink
+# ln -s /usr/share/zoneinfo/${zone}/${subzone} (Subzone may not be applicable)
+
+### Hardware clock ###
+# hwclock --systohc --utc
+
+### Configure Network ###
+# cd /etc/netctl
+# cp examples/ethernet-dhcp my_network
+# ${editor} my_network
+# Change interface from eth0 to appropriate interface. 
+		# check interfaces with ip link
+# netctl enable my_network
+
+# set root passwd
+
+### Bootloader ###
+## syslinux ##
+# pacman -S gptfdisk
+# pacman -S syslinux
+# syslinux-install_update -iam
+# ${editor} /boot/syslinux/syslinux.cfg
+	# under LABEL arch:
+	# change APPEND root=/dev/sda3 rw to the appropriate /dev/sdaX
+
+# exit
+# reboot
+
+
+### Create a user / Add to sudoers ###
+# useradd -m -G ${group} -s /bin/bash ${user}
+# as root, edit visudo to add either the user or group to sudoers
+
+
+### GUI setup ###
 	https://wiki.archlinux.org/index.php/General_recommendations#Graphical_user_interface
 	https://wiki.archlinux.org/index.php/Xorg
+# pacman -S gnome
+# Edit ~/.xinitrc file
+	# exec gnome-session
+# Enable gdm to start at boot
+# systemctl enable gdm
 
-If on VM, install the Guest Additions
+## If on VM, install the Guest Additions ##
 	https://wiki.archlinux.org/index.php/VirtualBox#Installation_steps_for_Arch_Linux_guests
+		https://wiki.archlinux.org/index.php/VirtualBox#Install_the_Guest_Additions
+
+# reboot
+
+### Blackarch installation ###
+# curl -s http://blackarch.org/strap.sh | sudo sh
+
+Append the following lines to /etc/pacman.conf
+# [blackarch]
+# Server = <mirror_site>/$repo/os/$arch
+	## mirror sites are here:
+		# http://www.blackarch.org/download.html#mirrors
+# pacman -Syyu
+
+## Installing packages ##
+#pacman -S blackarch - Gets all the tools
+# pacman -Sg | grep blackarch - Shows all the blackarch categories
+# pacman -S blackarch-<category> - Get a specific set of tools
+
+
