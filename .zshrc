@@ -4,6 +4,7 @@ RPROMPT='%t'
 ### LS Configuration ###
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=1
+alias ls="ls --color"
 
 ### VirtualEnv
 export WORKON_HOME=$HOME/.virtualenvs/
