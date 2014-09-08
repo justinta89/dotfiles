@@ -1,4 +1,5 @@
-PROMPT='%~# '
+autoload -U colors && colors
+PROMPT="%{$fg[cyan]%}%n%{$reset_color%}:%~# "
 RPROMPT='%t'
 
 ### LS Configuration ###
