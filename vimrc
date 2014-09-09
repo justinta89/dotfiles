@@ -143,6 +143,7 @@ set t_Co=256 " Explicitly tell Vim that the terminal supports 256 colors
 "
 "
 " The following are vundle settings.
+<<<<<<< HEAD
 "filetype off
 "set rtp+=~/.vim/bundle/vundle/
 "call vundle#rc()
@@ -150,6 +151,15 @@ set t_Co=256 " Explicitly tell Vim that the terminal supports 256 colors
 " let Vundle manage Vundle
 " " required! 
 "Bundle 'gmarik/vundle'
+=======
+" filetype off
+" set rtp+=~/.vim/bundle/vundle/
+" call vundle#rc()
+
+" let Vundle manage Vundle
+" " required! 
+" Bundle 'gmarik/vundle'
+>>>>>>> 0aeccafeb5294b1bad01ad1d860873498288607c
 
 " Here are some defualt plugins that add convenience for programming python.
 "Bundle 'klen/python-mode.git'
@@ -157,7 +167,11 @@ set t_Co=256 " Explicitly tell Vim that the terminal supports 256 colors
 "Bundle 'ivanov/vim-ipython.git'
 "Bundle 'Lokaltog/vim-powerline'
 
+<<<<<<< HEAD
 "filetype plugin indent on     " required! 
+=======
+" filetype plugin indent on     " required! 
+>>>>>>> 0aeccafeb5294b1bad01ad1d860873498288607c
 """ end vundle stuff
 
 set nonumber
