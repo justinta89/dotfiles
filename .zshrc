@@ -7,9 +7,9 @@ export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=1
 
 # VirtualEnv #
-export WORKON_HOME=$HOME/.virtualenvs/
-. `which virtualenvwrapper.sh`
-alias mkvirtualenv3="mkdirtualenv --python=`which python3`"
+# export WORKON_HOME=$HOME/.virtualenvs/
+# . `which virtualenvwrapper.sh`
+# alias mkvirtualenv3="mkdirtualenv --python=`which python3`"
 
 ###################
 #	   Alias      #
