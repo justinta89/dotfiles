@@ -3,8 +3,12 @@ PROMPT="%{$fg[cyan]%}%n%{$reset_color%}:%~# "
 RPROMPT='%t'
 
 # LS Configuration #
+## For Mac
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=1
+
+## Arch
+alias ls="ls --color"
 
 # VirtualEnv #
 export WORKON_HOME=$HOME/.virtualenvs/
@@ -25,4 +29,4 @@ alias ctf="clear; echo 'Now working on CTF'; workon ctf && cd ~/projects/flask/c
 alias normal="deactivate; clear; cd"
 
 # Syntax Highlighting #
-source /zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
