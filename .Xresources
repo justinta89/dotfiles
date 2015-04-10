@@ -135,7 +135,7 @@ URxvt.scrollBar: false
 URxvt.depth: 32
 
 
-URxvt.font: xft:DejaVu Sans Mono:size=11
+! URxvt.font: xft:DejaVu Sans Mono:size=11
 
 urxvt.background: #383738
 urxvt.foreground: #D3D2D3

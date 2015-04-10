@@ -1,3 +1,4 @@
+
 autoload -U colors && colors
 PROMPT="%{$fg[cyan]%}%n%{$reset_color%}:%~# "
 RPROMPT='%t'
@@ -10,14 +11,23 @@ export CLICOLOR=1
 ## Arch
 alias ls="ls --color"
 
+# keychain
+eval `keychain --eval id_rsa`
+
+# set vi mode
+bindkey -v
+
 # VirtualEnv #
-export WORKON_HOME=$HOME/.virtualenvs/
-. `which virtualenvwrapper.sh`
-alias mkvirtualenv3="mkdirtualenv --python=`which python3`"
+# export WORKON_HOME=$HOME/.virtualenvs/
+# . `which virtualenvwrapper.sh`
+# alias mkvirtualenv3="mkdirtualenv --python=`which python3`"
 
 ###################
 #	   Alias      #
 ###################
+
+# Burp
+alias burp="java -jar ~/burpsuite_pro_v1.6.11.jar &"
 
 # Server Alias #
 alias justinta="ssh -i /Users/justinanderson/.ssh/id_rsa2 root@justinta.com"
