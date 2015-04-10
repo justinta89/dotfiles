@@ -134,24 +134,51 @@
 URxvt.scrollBar: false
 URxvt.depth: 32
 
+! XFT
+Xft.antialias:	true
+! Font
+URxvt*font:                           xft:Anonymous Pro:size=10
+URxvt*boldFont:                       xft:Anonymous Pro:size=10
+! URxvt*italicFont:                     Anonymous Pro
+! URxvt*boldItalicFont:                 Anonymous Pro
 
-! URxvt.font: xft:DejaVu Sans Mono:size=11
+urxvt.foreground: #d3d0c8
+urxvt.background: #2d2d2d
+URxvt.cursorColor: d3d0c8
 
-urxvt.background: #383738
-urxvt.foreground: #D3D2D3
-urxvt.color0: #000000
-urxvt.color1: #FF7768
-urxvt.color2: #ABFA68
-urxvt.color3: #FFFD88
-urxvt.color4: #98D0FE
-urxvt.color5: #FF85FD
-urxvt.color6: #CACBFE
-urxvt.color7: #EFEFEF
+! black
+urxvt.color0: #2d2d2d
 urxvt.color8: #848484
-urxvt.color9: #FFBCB5
-urxvt.color10: #D1FCB1
-urxvt.color11: #FFFDD0
-urxvt.color12: #BADFFF
-urxvt.color13: #FFA9FE
-urxvt.color14: #E2E3FE
-urxvt.color15: #FFFFFF
+
+! red
+urxvt.color1: #f2777a
+urxvt.color9: #f2777a
+
+! green
+urxvt.color2: #99cc99
+urxvt.color10: #99cc99
+
+! yellow
+urxvt.color3: #ffcc66
+urxvt.color11: #ffcc66
+
+! blue
+urxvt.color4: #6699cc
+urxvt.color12: #6699cc
+
+! magenta
+urxvt.color5: #cc99cc
+urxvt.color13: #cc99cc
+
+! cyan
+urxvt.color6: #66cccc
+urxvt.color14: #66cccc
+
+! white
+urxvt.color7: #d3d0c8
+urxvt.color15: #f2f0ec
+
+! Transparency
+URxvt*.transparent: true
+! URxvt* shading: 0 to 99 darkens, 101 to 200 lightens
+URxvt*.shading: 101
