@@ -1,42 +1,45 @@
+PATH=$PATH:~/Scripts
 
 autoload -U colors && colors
-PROMPT="%{$fg[cyan]%}%n%{$reset_color%}:%~# "
-RPROMPT='%t'
+autoload -U compinit
+
+compinit
+# Old prompt
+# PROMPT="%{$fg[cyan]%}%n%{$reset_color%}:%~# "
+# RPROMPT='%t'
+
+
+# New prompt
+## Powerline ##
+. /Library/Python/2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # LS Configuration #
-## For Mac
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=1
-
-## Arch
-alias ls="ls --color"
-
-# keychain
-eval `keychain --eval id_rsa`
 
 # set vi mode
 bindkey -v
 
 # VirtualEnv #
-# export WORKON_HOME=$HOME/.virtualenvs/
-# . `which virtualenvwrapper.sh`
-# alias mkvirtualenv3="mkdirtualenv --python=`which python3`"
+export WORKON_HOME=$HOME/.virtualenvs/
+. `which virtualenvwrapper.sh`
+alias mkvirtualenv3="mkdirtualenv --python=`which python3`"
 
 ###################
-#	   Alias      #
+#      Alias      #
 ###################
-
-# Burp
-alias burp="java -jar ~/burpsuite_pro_v1.6.11.jar &"
-
 # Server Alias #
-alias justinta="ssh -i /Users/justinanderson/.ssh/id_rsa2 root@justinta.com"
+# Need to re-key for this to work. 
+# alias justinta="ssh -i /Users/justinanderson/.ssh/id_rsa2 root@justinta.com"
 
 # VirtualEnv Aliases #
-alias justin="clear; echo 'Now working on Justin'; workon justin && cd ~/projects/flask/justin"
-alias def="clear; echo 'Now working on Default'; workon default0-py2 && cd"
-alias ctf="clear; echo 'Now working on CTF'; workon ctf && cd ~/projects/flask/ctf"
 alias normal="deactivate; clear; cd"
+alias saltTesting="workon saltTesting; cd ~/SaltStack; clear"
 
 # Syntax Highlighting #
-# source /zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Evaluate system PATH
+if [ -x /usr/libexec/path_helper ]; then
+    eval `/usr/libexec/path_helper -s`
+fi
