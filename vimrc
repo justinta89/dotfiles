@@ -28,10 +28,6 @@ set background=dark
 colorscheme base16-ocean
 let base16colorspace=256
 
-"" Powerline
-" set laststatus=2
-" set t_Co=256
-
 "" Vundle Settings
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -57,6 +53,7 @@ let g:ctrlp_cmd = 'CtrlP'
 " --- NERDTree Settings ---
 " Start Nerdtree with vim
 autocmd vimenter * NERDTree
+autocmd vimenter * wincmd p
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " Close vim if Nerdtree is the only window left open
